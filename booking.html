@@ -1,1 +1,413 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Book a Stay | Country Paws Boarding</title>
+
+<style>
+:root {
+  --brown: #38291f;
+  --dark: #241d17;
+  --olive: #626044;
+  --cream: #f0e8d5;
+  --gold: #d6b66b;
+  --wood: #8b735d;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background: var(--dark);
+  color: var(--cream);
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+}
+
+header {
+  background: var(--brown);
+  border-bottom: 3px solid var(--olive);
+  padding: 18px;
+  text-align: center;
+}
+
+header a {
+  color: var(--cream);
+  text-decoration: none;
+  font-weight: bold;
+}
+
+main {
+  max-width: 760px;
+  margin: 45px auto;
+  padding: 0 20px;
+}
+
+h1, h2 {
+  font-family: Georgia, serif;
+}
+
+h1 {
+  text-align: center;
+  font-size: 40px;
+}
+
+.intro {
+  text-align: center;
+  color: #d4cbbb;
+  margin-bottom: 35px;
+}
+
+.booking-box {
+  background: var(--brown);
+  border: 1px solid var(--wood);
+  border-radius: 8px;
+  padding: 30px;
+}
+
+label {
+  display: block;
+  margin: 16px 0 6px;
+  font-weight: bold;
+}
+
+input {
+  width: 100%;
+  padding: 13px;
+  border: 1px solid var(--wood);
+  border-radius: 4px;
+  background: var(--cream);
+  color: var(--dark);
+  font-size: 16px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.price-box {
+  background: var(--olive);
+  padding: 20px;
+  margin-top: 25px;
+  border-radius: 5px;
+  text-align: center;
+}
+
+.price-box strong {
+  color: var(--gold);
+  font-size: 30px;
+}
+
+button {
+  width: 100%;
+  padding: 15px;
+  margin-top: 22px;
+  border: none;
+  border-radius: 4px;
+  background: var(--gold);
+  color: var(--dark);
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+button:disabled {
+  opacity: .5;
+  cursor: not-allowed;
+}
+
+#message {
+  margin-top: 20px;
+  padding: 15px;
+  border-radius: 5px;
+  white-space: pre-line;
+}
+
+.success {
+  background: #28452f;
+  color: white;
+}
+
+.error {
+  background: #642e27;
+  color: white;
+}
+
+.note {
+  color: #d4cbbb;
+  font-size: 13px;
+  margin-top: 20px;
+}
+
+footer {
+  text-align: center;
+  padding: 25px;
+  color: #aaa18f;
+  font-size: 13px;
+}
+
+@media(max-width:550px) {
+  .grid { grid-template-columns: 1fr; }
+  .booking-box { padding: 20px; }
+  h1 { font-size: 32px; }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+<a href="index.html">COUNTRY PAWS BOARDING</a>
+</header>
+
+<main>
+
+<h1>Book Your Dog's Stay</h1>
+
+<p class="intro">
+Welcome to Country Paws Boarding! Choose your dates,
+enter your information, and reserve your dog's stay.
+</p>
+
+<div class="booking-box">
+
+<h2>Reservation Information</h2>
+
+<form id="bookingForm">
+
+<div class="grid">
+<div>
+<label for="check_in">Check-in Date</label>
+<input type="date" id="check_in" required>
+</div>
+
+<div>
+<label for="check_out">Check-out Date</label>
+<input type="date" id="check_out" required>
+</div>
+</div>
+
+<div class="price-box">
+<div>Boarding Rate</div>
+<strong>$35</strong> per night
+<div id="priceDetails">Choose your dates to see your total.</div>
+</div>
+
+<h2>Your Information</h2>
+
+<label for="owner_name">Your Full Name</label>
+<input id="owner_name" maxlength="100" required>
+
+<label for="email">Email Address</label>
+<input type="email" id="email" maxlength="254" required>
+
+<label for="phone">Phone Number</label>
+<input type="tel" id="phone" maxlength="30" required>
+
+<h2>About Your Dog</h2>
+
+<label for="dog_name">Dog's Name</label>
+<input id="dog_name" maxlength="100" required>
+
+<label for="dog_breed">Breed</label>
+<input id="dog_breed" maxlength="100">
+
+<label for="dog_age">Age</label>
+<input id="dog_age" maxlength="30">
+
+<p class="note">
+By submitting your reservation, you agree to the
+Country Paws Boarding policies. Reservations are
+automatically confirmed when successfully submitted.
+Payment arrangements remain as listed on our website.
+</p>
+
+<button type="submit" id="submitButton">
+Check Dates & Confirm Reservation
+</button>
+
+<div id="message" role="status" aria-live="polite"></div>
+
+</form>
+</div>
+</main>
+
+<footer>
+© 2026 Country Paws Boarding · Knox, Indiana
+</footer>
+
+<script>
+const API =
+"https://country-paws-booking.countrypawsboard.workers.dev";
+
+const checkIn = document.getElementById("check_in");
+const checkOut = document.getElementById("check_out");
+const priceDetails = document.getElementById("priceDetails");
+const message = document.getElementById("message");
+const submitButton = document.getElementById("submitButton");
+
+function todayString() {
+  const now = new Date();
+  return [
+    now.getFullYear(),
+    String(now.getMonth() + 1).padStart(2, "0"),
+    String(now.getDate()).padStart(2, "0")
+  ].join("-");
+}
+
+checkIn.min = todayString();
+checkOut.min = todayString();
+
+checkIn.addEventListener("change", () => {
+  checkOut.min = checkIn.value || todayString();
+
+  if (checkOut.value && checkOut.value <= checkIn.value) {
+    checkOut.value = "";
+  }
+
+  updatePrice();
+});
+
+checkOut.addEventListener("change", updatePrice);
+
+function getNights() {
+  if (!checkIn.value || !checkOut.value ||
+      checkIn.value >= checkOut.value) return 0;
+
+  return Math.round(
+    (Date.parse(checkOut.value + "T00:00:00Z") -
+     Date.parse(checkIn.value + "T00:00:00Z")) /
+    86400000
+  );
+}
+
+function updatePrice() {
+  const nights = getNights();
+
+  priceDetails.textContent = nights
+    ? `${nights} night(s) · Total: $${nights * 35}`
+    : "Choose your dates to see your total.";
+}
+
+function showMessage(text, type) {
+  message.className = type;
+  message.textContent = text;
+}
+
+async function checkAvailability(start, end) {
+  const response = await fetch(
+    `${API}/api/availability?start=${start}&end=${end}`
+  );
+
+  if (!response.ok) {
+    throw new Error("Unable to check availability.");
+  }
+
+  const data = await response.json();
+
+  if (data.error) throw new Error(data.error);
+
+  const booked = data.booked_dates || [];
+
+  const hasBookedNight = booked.some(
+    date => date >= start && date < end
+  );
+
+  const hasBlockedDate = (data.blocked_dates || []).length > 0;
+
+  return !hasBookedNight && !hasBlockedDate;
+}
+
+document.getElementById("bookingForm")
+.addEventListener("submit", async event => {
+  event.preventDefault();
+
+  message.textContent = "";
+  message.className = "";
+
+  const nights = getNights();
+
+  if (!nights) {
+    showMessage("Please select valid check-in and check-out dates.", "error");
+    return;
+  }
+
+  if (nights > 60) {
+    showMessage("Maximum stay is 60 nights.", "error");
+    return;
+  }
+
+  submitButton.disabled = true;
+  submitButton.textContent = "Checking availability...";
+
+  try {
+    const available = await checkAvailability(
+      checkIn.value,
+      checkOut.value
+    );
+
+    if (!available) {
+      showMessage(
+        "Sorry! Those dates are unavailable. Please choose different dates.",
+        "error"
+      );
+      return;
+    }
+
+    submitButton.textContent = "Confirming reservation...";
+
+    const reservation = {
+      owner_name: document.getElementById("owner_name").value,
+      email: document.getElementById("email").value,
+      phone: document.getElementById("phone").value,
+      dog_name: document.getElementById("dog_name").value,
+      dog_breed: document.getElementById("dog_breed").value,
+      dog_age: document.getElementById("dog_age").value,
+      check_in: checkIn.value,
+      check_out: checkOut.value
+    };
+
+    const response = await fetch(`${API}/api/book`, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(reservation)
+    });
+
+    const result = await response.json();
+
+    if (!response.ok || !result.success) {
+      throw new Error(result.error || "Reservation failed.");
+    }
+
+    document.getElementById("bookingForm").reset();
+    checkIn.min = todayString();
+    checkOut.min = todayString();
+    updatePrice();
+
+    showMessage(
+      `YOUR RESERVATION IS CONFIRMED!\n\n` +
+      `Confirmation: ${result.confirmation_code}\n` +
+      `Dog: ${reservation.dog_name}\n` +
+      `Check-in: ${reservation.check_in}\n` +
+      `Check-out: ${reservation.check_out}\n` +
+      `Nights: ${result.nights}\n` +
+      `Total: $${result.total_price}\n\n` +
+      `Please save your confirmation number.`,
+      "success"
+    );
+
+  } catch (error) {
+    showMessage(error.message, "error");
+  } finally {
+    submitButton.disabled = false;
+    submitButton.textContent = "Check Dates & Confirm Reservation";
+  }
+});
+</script>
+
+</body>
+</html>
 
