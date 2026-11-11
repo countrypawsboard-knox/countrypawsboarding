@@ -242,35 +242,52 @@ section {
 /* UECKER PHOTO AND TEXT */
 .uecker-grid {
   display: grid;
-  grid-template-columns: 0.9fr 1.1fr;
-  gap: 45px;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: 40px;
   align-items: center;
 }
 
 .uecker-photo {
   display: block;
   width: 100%;
-  height: auto;
-  max-height: 520px;
-  object-fit: contain;
-  object-position: center;
-  background: var(--dark);
+  height: 480px;
+  object-fit: cover;
+  object-position: center 15%;
   border: 6px solid var(--wood);
   border-radius: 4px;
 }
 
 .uecker-info {
   min-width: 0;
+  max-width: 520px;
+}
+
+.uecker-info .eyebrow {
+  margin: 0 0 12px;
 }
 
 .uecker-info h2 {
-  margin: 12px 0 20px;
+  margin: 0 0 20px;
+  line-height: 1.2;
+  letter-spacing: normal;
+  word-spacing: normal;
 }
 
 .uecker-info p {
-  margin: 0 0 18px;
-  line-height: 1.8;
+  display: block;
+  width: 100%;
+  margin: 0 0 16px;
+  padding: 0;
   color: #e0d7c7;
+  font-family: Arial, sans-serif;
+  font-size: 16px;
+  line-height: 1.7;
+  letter-spacing: normal;
+  word-spacing: normal;
+  text-align: left;
+  white-space: normal;
+  overflow-wrap: normal;
+  word-break: normal;
 }
 
 .policy-grid {
@@ -355,13 +372,24 @@ footer {
   .uecker-photo {
     width: 100%;
     max-width: 450px;
-    height: auto;
-    max-height: 520px;
+    height: 430px;
     margin: auto;
+    object-position: center 15%;
   }
 
   .uecker-info {
-    text-align: center;
+    width: 100%;
+    max-width: 520px;
+    margin: auto;
+    text-align: left;
+  }
+
+  .uecker-info h2 {
+    font-size: 32px;
+  }
+
+  .uecker-info p {
+    text-align: left;
   }
 }
 </style>
@@ -609,4 +637,5 @@ Personal care, one dog at a time.
 
 </body>
 </html>
+
 
