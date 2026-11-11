@@ -4,345 +4,374 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Country Paws Boarding | Knox, Indiana</title>
-<meta name="description" content="Country Paws Boarding offers personalized, one-dog-at-a-time dog boarding in Knox, Indiana.">
+<meta name="description" content="Personalized dog boarding in Knox, Indiana. One dog at a time.">
 <style>
 :root {
-  --navy: #142b3b;
-  --dark: #101b22;
-  --gold: #d9a83e;
-  --cream: #eee9dc;
-  --muted: #b9c0bd;
-  --panel: #1c303b;
+  --brown:#38291f;
+  --dark:#241d17;
+  --olive:#626044;
+  --cream:#f0e8d5;
+  --wood:#8b735d;
+  --gold:#d6b66b;
 }
-* { box-sizing: border-box; }
-html { scroll-behavior: smooth; }
+* {box-sizing:border-box}
+html {scroll-behavior:smooth}
 body {
-  margin: 0;
-  background: var(--dark);
-  color: var(--cream);
-  font-family: Arial, sans-serif;
-  line-height: 1.7;
+  margin:0;
+  background:var(--dark);
+  color:var(--cream);
+  font-family:Arial,sans-serif;
+  line-height:1.7;
 }
-a { color: inherit; text-decoration: none; }
+a {color:inherit;text-decoration:none}
 header {
-  background: #101b22;
-  border-bottom: 1px solid #35434a;
-  position: sticky;
-  top: 0;
-  z-index: 10;
+  background:var(--brown);
+  border-bottom:2px solid var(--olive);
+  position:sticky;
+  top:0;
+  z-index:10;
 }
 .nav {
-  max-width: 1150px;
-  margin: auto;
-  padding: 16px 24px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 20px;
+  max-width:1150px;
+  margin:auto;
+  padding:12px 22px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:15px;
 }
 .brand {
-  font-family: Georgia, serif;
-  font-size: 22px;
-  font-weight: bold;
-  color: var(--gold);
+  display:flex;
+  align-items:center;
+  gap:12px;
+  color:var(--cream);
+  font:bold 19px Georgia,serif;
 }
-nav { display: flex; gap: 23px; flex-wrap: wrap; }
-nav a { font-size: 13px; color: var(--cream); }
-nav a:hover { color: var(--gold); }
+.brand img {
+  width:55px;
+  height:55px;
+  border-radius:50%;
+  object-fit:contain;
+  background:var(--cream);
+}
+nav {display:flex;gap:20px;flex-wrap:wrap}
+nav a {font-size:12px;font-weight:bold;letter-spacing:1px}
+nav a:hover {color:var(--gold)}
 .hero {
-  min-height: 590px;
-  padding: 100px 24px;
-  display: flex;
-  align-items: center;
-  background:
-    linear-gradient(90deg, rgba(10,20,27,.96), rgba(10,20,27,.70)),
-    url("https://images.unsplash.com/photo-1516734212186-a967f81ad0d7?auto=format&fit=crop&w=1800&q=85") center/cover;
+  background:linear-gradient(110deg,#241d17,#41442f);
+  border-bottom:5px solid var(--olive);
 }
-.hero-inner { max-width: 1150px; width: 100%; margin: auto; }
+.hero-inner {
+  max-width:1150px;
+  min-height:540px;
+  padding:65px 24px;
+  margin:auto;
+  display:grid;
+  grid-template-columns:1.2fr .8fr;
+  align-items:center;
+  gap:40px;
+}
+.hero-logo {
+  width:100%;
+  max-width:370px;
+  justify-self:center;
+  border-radius:50%;
+  border:6px solid var(--cream);
+  box-shadow:0 15px 35px #0007;
+}
 .eyebrow {
-  color: var(--gold);
-  letter-spacing: 3px;
-  font-size: 12px;
-  font-weight: bold;
-  text-transform: uppercase;
+  color:var(--gold);
+  font-size:12px;
+  font-weight:bold;
+  letter-spacing:3px;
+  text-transform:uppercase;
 }
-h1,h2,h3 { font-family: Georgia, serif; line-height: 1.2; }
-h1 { font-size: clamp(42px, 7vw, 76px); max-width: 720px; margin: 15px 0; }
-h1 span { color: var(--gold); }
-.hero p { max-width: 560px; color: #e0e0d9; font-size: 18px; }
-.buttons { display: flex; gap: 13px; flex-wrap: wrap; margin-top: 30px; }
+h1,h2,h3 {font-family:Georgia,serif;line-height:1.2}
+h1 {font-size:clamp(42px,6vw,68px);margin:15px 0}
+h1 span {color:var(--gold)}
+h2 {font-size:36px}
+.hero p {font-size:18px;color:#e0d7c7}
 .btn {
-  display: inline-block;
-  padding: 13px 23px;
-  background: var(--gold);
-  color: #17232a;
-  font-weight: bold;
-  border-radius: 4px;
+  display:inline-block;
+  padding:13px 23px;
+  margin:8px 5px 8px 0;
+  background:var(--gold);
+  color:var(--dark);
+  font-weight:bold;
+  border-radius:3px;
 }
-.btn.outline { background: transparent; color: white; border: 1px solid #b6b6aa; }
-section { padding: 82px 24px; }
-.container { max-width: 1100px; margin: auto; }
-.section-heading { text-align: center; margin-bottom: 42px; }
-.section-heading h2 { font-size: 38px; margin: 8px 0; }
-.section-heading p { color: var(--muted); }
-.gold { color: var(--gold); }
-.about-grid, .uecker-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 45px;
-  align-items: center;
+.btn.outline {
+  background:transparent;
+  color:var(--cream);
+  border:1px solid var(--cream);
 }
-.photo-placeholder {
-  min-height: 330px;
-  border: 2px dashed #687780;
-  background: #1a2b34;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  padding: 30px;
-  color: var(--muted);
-  border-radius: 6px;
+section {padding:75px 24px}
+.container {max-width:1100px;margin:auto}
+.heading {text-align:center;margin-bottom:38px}
+.heading p {color:#c8bdac}
+.about {background:var(--brown)}
+.split,.uecker-grid {
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:45px;
+  align-items:center;
 }
-.photo-placeholder strong { display: block; color: var(--gold); }
-h2 { font-size: 36px; }
-p { color: #d0d2cc; }
+.about img {
+  width:100%;
+  max-width:430px;
+  justify-self:center;
+  background:var(--cream);
+  border:6px solid var(--wood);
+}
+.price {
+  text-align:center;
+  background:var(--olive);
+  padding:40px 20px;
+}
+.price-number {
+  font:bold 65px Georgia,serif;
+  color:var(--gold);
+}
+.price h2 {margin:0}
 .cards {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 18px;
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:18px;
 }
 .card {
-  padding: 25px;
-  background: var(--panel);
-  border: 1px solid #354852;
-  border-radius: 6px;
+  padding:25px;
+  background:var(--brown);
+  border:1px solid var(--wood);
+  border-top:4px solid var(--olive);
+  border-radius:4px;
 }
-.card h3 { color: var(--gold); font-size: 21px; }
-.card p { font-size: 14px; }
-.price {
-  background: #243b47;
-  text-align: center;
-  border-top: 3px solid var(--gold);
-  padding: 45px 20px;
+.card h3,.policy h3 {color:var(--gold)}
+.card p {font-size:14px;color:#d4cbbb}
+.dark-section {background:#303527}
+.uecker-photo {
+  width:100%;
+  height:420px;
+  object-fit:cover;
+  object-position:center 30%;
+  border:6px solid var(--wood);
 }
-.price-number { font: bold 62px Georgia, serif; color: var(--gold); }
-.price small { color: var(--muted); }
-.feature-list { padding-left: 20px; }
-.feature-list li { margin: 10px 0; color: #d0d2cc; }
-.dark-section { background: #152630; }
-.policy-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+.policy-grid {
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:18px;
+}
 .policy {
-  padding: 22px;
-  border-left: 3px solid var(--gold);
-  background: #1d303b;
+  background:var(--brown);
+  padding:22px;
+  border-left:4px solid var(--olive);
 }
-.policy h3 { margin-top: 0; color: var(--gold); }
+.policy ul {padding-left:20px}
+.policy li {margin:8px 0;color:#d4cbbb}
 .contact {
-  background: #0d171e;
-  text-align: center;
+  text-align:center;
+  background:#17140f;
 }
-.contact-details { margin: 25px auto; line-height: 2.2; }
+.contact-details {line-height:2.2;margin:25px auto}
+.contact strong {color:var(--gold)}
 footer {
-  text-align: center;
-  padding: 25px;
-  background: #090f14;
-  color: #9ca6a6;
-  font-size: 12px;
+  text-align:center;
+  padding:25px;
+  background:#100d0a;
+  color:#aaa18f;
+  font-size:12px;
 }
 @media(max-width:750px) {
-  .nav { flex-direction: column; }
-  nav { justify-content: center; gap: 12px; }
-  .about-grid,.uecker-grid,.policy-grid { grid-template-columns: 1fr; }
-  .cards { grid-template-columns: 1fr; }
-  section { padding: 58px 20px; }
-  .hero { min-height: 520px; padding: 75px 22px; }
+  .nav {flex-direction:column}
+  nav {justify-content:center;gap:12px}
+  .hero-inner,.split,.uecker-grid {grid-template-columns:1fr}
+  .hero-inner {text-align:center;padding:55px 22px}
+  .hero-logo {width:260px;grid-row:1}
+  .cards,.policy-grid {grid-template-columns:1fr}
+  section {padding:55px 20px}
+  .uecker-photo {height:350px}
 }
 </style>
 </head>
 <body>
 
 <header>
-  <div class="nav">
-    <a class="brand" href="#home">COUNTRY PAWS BOARDING</a>
-    <nav>
-      <a href="#about">ABOUT</a>
-      <a href="#boarding">BOARDING</a>
-      <a href="#uecker">UECKER</a>
-      <a href="#policies">POLICIES</a>
-      <a href="#contact">CONTACT</a>
-    </nav>
-  </div>
+<div class="nav">
+<a class="brand" href="#home">
+<img src="logo.png" alt="Country Paws Logo">
+COUNTRY PAWS BOARDING
+</a>
+<nav>
+<a href="#about">ABOUT</a>
+<a href="#boarding">BOARDING</a>
+<a href="#uecker">UECKER</a>
+<a href="#policies">POLICIES</a>
+<a href="#contact">CONTACT</a>
+</nav>
+</div>
 </header>
 
 <main>
 <section class="hero" id="home">
-  <div class="hero-inner">
-    <div class="eyebrow">Knox, Indiana · Personalized Dog Boarding</div>
-    <h1>A comfortable stay.<br><span>A little country charm.</span></h1>
-    <p>At Country Paws Boarding, your dog gets personal attention in a home-based boarding environment. We welcome one dog at a time, so every guest gets our attention.</p>
-    <div class="buttons">
-      <a class="btn" href="#contact">Contact Us</a>
-      <a class="btn outline" href="#boarding">Explore Boarding</a>
-    </div>
-  </div>
+<div class="hero-inner">
+<div>
+<div class="eyebrow">Knox, Indiana · Personalized Dog Boarding</div>
+<h1>A home away from home for <span>your best friend.</span></h1>
+<p>Personalized dog boarding with room to play, space to relax, and care you can feel good about.</p>
+<a class="btn" href="#contact">ASK ABOUT BOARDING</a>
+<a class="btn outline" href="#boarding">LEARN MORE</a>
+</div>
+<img class="hero-logo" src="logo.png" alt="Country Paws Boarding">
+</div>
 </section>
 
-<section id="about">
-  <div class="container about-grid">
-    <div>
-      <div class="eyebrow">Welcome to Country Paws</div>
-      <h2>More than a place to stay.</h2>
-      <p>Country Paws Boarding is a small, home-based dog boarding business located in Knox, Indiana. Our goal is to provide a comfortable, caring place for your dog while you're away.</p>
-      <p>We board one guest dog at a time, allowing us to focus on your dog's individual needs and routine.</p>
-      <p>Drop-off and pick-up are arranged by appointment throughout the day.</p>
-    </div>
-    <div class="photo-placeholder">
-      <div><strong>YOUR COUNTRY PAWS LOGO</strong>Logo image will be added here.</div>
-    </div>
-  </div>
+<section class="about" id="about">
+<div class="container split">
+<div>
+<div class="eyebrow">Welcome to Country Paws</div>
+<h2>Good care. Room to roam. A place to rest.</h2>
+<p>Country Paws Boarding is a small, home-based dog boarding business in Knox, Indiana.</p>
+<p>We board one guest dog at a time, allowing us to focus on your dog's individual needs and routine.</p>
+<p>Dogs enjoy outdoor time in our fenced area and covered kennel, then come inside the house to sleep. During bad weather, dogs stay indoors.</p>
+<p>Drop-off and pick-up are arranged by appointment throughout the day.</p>
+</div>
+<img src="logo.png" alt="Country Paws Boarding logo">
+</div>
 </section>
 
 <section class="price">
-  <div class="eyebrow">Simple, straightforward pricing</div>
-  <div class="price-number">$35</div>
-  <h2>Per Night</h2>
-  <small>No deposit required · One dog at a time</small>
-  <p>Payment accepted by cash, check, or Venmo.</p>
+<div class="eyebrow">Straightforward Pricing</div>
+<div class="price-number">$35</div>
+<h2>Per Night</h2>
+<p>No deposit required · Cash, check, or Venmo</p>
 </section>
 
 <section id="boarding">
-  <div class="container">
-    <div class="section-heading">
-      <div class="eyebrow">A place to relax and play</div>
-      <h2>How Boarding Works</h2>
-      <p>Room to enjoy the outdoors, with indoor comfort when it's time to rest.</p>
-    </div>
-    <div class="cards">
-      <div class="card">
-        <h3>Outdoor Time</h3>
-        <p>Dogs spend time outdoors in our fenced area and covered kennel. The kennel has fencing on all sides, a gate, and a solid metal-sided wall.</p>
-      </div>
-      <div class="card">
-        <h3>Indoor Comfort</h3>
-        <p>Dogs come inside the house to sleep. During bad weather, they stay indoors for comfort and protection.</p>
-      </div>
-      <div class="card">
-        <h3>Personal Attention</h3>
-        <p>We care for one guest dog at a time. Your dog can be around Uecker if you choose, or kept separate.</p>
-      </div>
-    </div>
-  </div>
+<div class="container">
+<div class="heading">
+<div class="eyebrow">A comfortable stay</div>
+<h2>Room to Play. A Place to Rest.</h2>
+<p>Here's what a stay at Country Paws looks like.</p>
+</div>
+<div class="cards">
+<div class="card">
+<h3>Outdoor Time</h3>
+<p>Dogs spend time outside in our fenced area and covered kennel. The kennel has fencing on all sides, a gate, and a solid metal-sided wall.</p>
+</div>
+<div class="card">
+<h3>Indoor Comfort</h3>
+<p>Dogs come inside the house to sleep. During bad weather, they stay indoors for comfort and protection.</p>
+</div>
+<div class="card">
+<h3>One Dog at a Time</h3>
+<p>We board one guest dog at a time, so your dog gets our personal attention.</p>
+</div>
+</div>
+</div>
 </section>
 
 <section class="dark-section" id="uecker">
-  <div class="container uecker-grid">
-    <div class="photo-placeholder">
-      <div><strong>UECKER'S PHOTO</strong>Your uploaded photo of Uecker will go here.</div>
-    </div>
-    <div>
-      <div class="eyebrow">Meet the resident dog</div>
-      <h2>This is <span class="gold">Uecker!</span></h2>
-      <p>Uecker is our 7-year-old yellow Labrador Retriever. He's a friendly boy who loves to play and meet new friends.</p>
-      <p>Whether your dog spends time around Uecker is entirely up to you. We can keep the dogs separate if you prefer.</p>
-    </div>
-  </div>
+<div class="container uecker-grid">
+<img class="uecker-photo" src="uecker.jpg" alt="Uecker, our yellow Labrador">
+<div>
+<div class="eyebrow">Meet the resident dog</div>
+<h2>Say Hello to <span style="color:var(--gold)">Uecker!</span></h2>
+<p>Uecker is our 7-year-old yellow Labrador Retriever. He's a friendly boy who loves to play and meet new friends.</p>
+<p>Whether your dog spends time around Uecker is completely up to you. If you prefer, we can keep the dogs separate.</p>
+</div>
+</div>
 </section>
 
 <section>
-  <div class="container">
-    <div class="section-heading">
-      <div class="eyebrow">Getting ready for a stay</div>
-      <h2>What to Bring</h2>
-    </div>
-    <div class="cards">
-      <div class="card">
-        <h3>Your Dog's Food</h3>
-        <p>Owners must bring all food their dog will need for the entire stay. Country Paws does not supply dog food.</p>
-      </div>
-      <div class="card">
-        <h3>Bowls & Water</h3>
-        <p>Fresh drinking water and food and water bowls are provided by Country Paws.</p>
-      </div>
-      <div class="card">
-        <h3>Bedding & Favorites</h3>
-        <p>You may bring your dog's own bed, blanket, or favorite toys. Bedding can also be provided here.</p>
-      </div>
-    </div>
-    <p style="text-align:center;margin-top:25px">If your dog takes medication, please bring it with clear written instructions. Owners must also provide feeding instructions.</p>
-  </div>
+<div class="container">
+<div class="heading">
+<div class="eyebrow">Pack for your dog's stay</div>
+<h2>What to Bring</h2>
+</div>
+<div class="cards">
+<div class="card">
+<h3>Your Dog's Food</h3>
+<p>Owners must bring all food their dog will need for the entire stay. Country Paws does not provide dog food.</p>
+</div>
+<div class="card">
+<h3>Bowls & Water</h3>
+<p>Country Paws provides food and water bowls and fresh drinking water.</p>
+</div>
+<div class="card">
+<h3>Comfort Items</h3>
+<p>You may bring your dog's own bed, blanket, or favorite toys. Please bring any medication with clear written instructions.</p>
+</div>
+</div>
+</div>
 </section>
 
 <section class="dark-section" id="policies">
-  <div class="container">
-    <div class="section-heading">
-      <div class="eyebrow">A safe and comfortable stay</div>
-      <h2>Boarding Requirements & Policies</h2>
-    </div>
-    <div class="policy-grid">
-      <div class="policy">
-        <h3>Who We Welcome</h3>
-        <ul class="feature-list">
-          <li>Adult dogs, at least 1 year old.</li>
-          <li>Friendly and harmless dogs.</li>
-          <li>Fully house-trained dogs.</li>
-          <li>Dogs must be current on required vaccinations, with proof provided.</li>
-          <li>No history of aggression toward people or animals.</li>
-        </ul>
-      </div>
-      <div class="policy">
-        <h3>Behavior Expectations</h3>
-        <ul class="feature-list">
-          <li>No excessive barking.</li>
-          <li>Mild separation nervousness may be okay.</li>
-          <li>Severe separation anxiety or destructive behavior may make a dog unsuitable.</li>
-          <li>Owners must honestly disclose behavior and medical concerns.</li>
-          <li>No mandatory meet-and-greet.</li>
-        </ul>
-      </div>
-      <div class="policy">
-        <h3>Reservations</h3>
-        <ul class="feature-list">
-          <li>One guest dog at a time.</li>
-          <li>Drop-off and pick-up by appointment.</li>
-          <li>No deposit required.</li>
-          <li>Please contact us if plans change.</li>
-          <li>At least 48 hours' notice for cancellations to avoid a cancellation fee.</li>
-        </ul>
-      </div>
-      <div class="policy">
-        <h3>Medication & Emergencies</h3>
-        <ul class="feature-list">
-          <li>Owners supply all medications and written instructions.</li>
-          <li>An emergency contact is required.</li>
-          <li>Owner's veterinarian information is required.</li>
-          <li>Owners will be contacted if a dog becomes sick or injured.</li>
-          <li>Urgent veterinary care may be arranged if the owner cannot be reached.</li>
-        </ul>
-      </div>
-    </div>
-  </div>
+<div class="container">
+<div class="heading">
+<div class="eyebrow">Before booking</div>
+<h2>Boarding Requirements & Policies</h2>
+</div>
+<div class="policy-grid">
+<div class="policy">
+<h3>Who We Welcome</h3>
+<ul>
+<li>Adult dogs, at least 1 year old.</li>
+<li>Friendly and harmless dogs.</li>
+<li>Fully house-trained dogs.</li>
+<li>Current required vaccinations, with proof provided.</li>
+<li>No history of aggression toward people or animals.</li>
+</ul>
+</div>
+<div class="policy">
+<h3>Behavior Expectations</h3>
+<ul>
+<li>No excessive barking.</li>
+<li>Mild separation nervousness may be okay.</li>
+<li>Severe separation anxiety or destructive behavior may make a dog unsuitable.</li>
+<li>Owners must disclose behavior and medical concerns.</li>
+<li>No mandatory meet-and-greet.</li>
+</ul>
+</div>
+<div class="policy">
+<h3>Reservations</h3>
+<ul>
+<li>One guest dog at a time.</li>
+<li>Drop-off and pick-up by appointment.</li>
+<li>No deposit required.</li>
+<li>Please contact us if plans change.</li>
+</ul>
+</div>
+<div class="policy">
+<h3>Medication & Emergencies</h3>
+<ul>
+<li>Owners supply medications and written instructions.</li>
+<li>An emergency contact and veterinarian information are required.</li>
+<li>Owners will be contacted if a dog becomes sick or injured.</li>
+<li>Urgent veterinary care may be arranged if the owner cannot be reached.</li>
+</ul>
+</div>
+</div>
+</div>
 </section>
 
-<section id="contact" class="contact">
-  <div class="container">
-    <div class="eyebrow">We'd love to hear from you</div>
-    <h2>Contact Country Paws</h2>
-    <p>Have a question or want to ask about boarding availability? Get in touch!</p>
-    <div class="contact-details">
-      <p><strong>Phone / Text:</strong><br><a href="tel:+12192148417"> (219) 214-8417</a></p>
-      <p><strong>Email:</strong><br><a href="mailto:countrypawsboard@gmail.com">countrypawsboard@gmail.com</a></p>
-      <p><strong>Location:</strong><br>4830 E 250 N, Knox, IN 46534</p>
-    </div>
-    <a class="btn" href="mailto:countrypawsboard@gmail.com?subject=Country%20Paws%20Boarding%20Inquiry">Email Us</a>
-  </div>
+<section class="contact" id="contact">
+<div class="container">
+<div class="eyebrow">Let's talk about your dog's stay</div>
+<h2>Get in Touch with Country Paws</h2>
+<p>Have a question or want to ask about available dates? Call, text, or email.</p>
+<div class="contact-details">
+<p><strong>Call or Text</strong><br><a href="tel:+12192148417">(219) 214-8417</a></p>
+<p><strong>Email</strong><br><a href="mailto:countrypawsboard@gmail.com">countrypawsboard@gmail.com</a></p>
+<p><strong>Location</strong><br>4830 E 250 N, Knox, IN 46534</p>
+</div>
+<a class="btn" href="sms:+12192148417">TEXT US</a>
+<a class="btn outline" href="mailto:countrypawsboard@gmail.com?subject=Country%20Paws%20Boarding%20Inquiry">EMAIL US</a>
+</div>
 </section>
 </main>
 
 <footer>
-  © 2026 Country Paws Boarding · Knox, Indiana
-  <br>Personal care, one dog at a time.
+© 2026 Country Paws Boarding · Knox, Indiana
+<br>Personal care, one dog at a time.
 </footer>
-
 </body>
 </html>
