@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -16,13 +17,9 @@
   --gold: #d6b66b;
 }
 
-* {
-  box-sizing: border-box;
-}
+* { box-sizing: border-box; }
 
-html {
-  scroll-behavior: smooth;
-}
+html { scroll-behavior: smooth; }
 
 body {
   margin: 0;
@@ -83,8 +80,40 @@ nav a {
   letter-spacing: 1px;
 }
 
-nav a:hover {
-  color: var(--gold);
+nav a:hover { color: var(--gold); }
+
+/* COMING SOON ANNOUNCEMENT */
+.coming-soon {
+  background: linear-gradient(110deg, #626044, #8b735d);
+  border-bottom: 3px solid var(--gold);
+  border-top: 2px solid var(--gold);
+  padding: 23px 20px;
+  text-align: center;
+}
+
+.coming-soon-label {
+  display: inline-block;
+  background: var(--gold);
+  color: var(--dark);
+  padding: 5px 18px;
+  border-radius: 3px;
+  font-size: 14px;
+  font-weight: bold;
+  letter-spacing: 3px;
+  margin-bottom: 7px;
+}
+
+.coming-soon h2 {
+  margin: 3px 0;
+  color: #fff;
+  font-size: clamp(25px, 4vw, 36px);
+  letter-spacing: 2px;
+}
+
+.coming-soon p {
+  margin: 5px auto 0;
+  color: var(--cream);
+  font-size: 15px;
 }
 
 .hero {
@@ -130,13 +159,9 @@ h1 {
   margin: 15px 0;
 }
 
-h1 span {
-  color: var(--gold);
-}
+h1 span { color: var(--gold); }
 
-h2 {
-  font-size: 36px;
-}
+h2 { font-size: 36px; }
 
 .hero p {
   font-size: 18px;
@@ -151,6 +176,13 @@ h2 {
   color: var(--dark);
   font-weight: bold;
   border-radius: 3px;
+  text-align: center;
+  transition: background .2s, transform .2s;
+}
+
+.btn:hover {
+  background: #f0d48a;
+  transform: translateY(-2px);
 }
 
 .btn.outline {
@@ -159,9 +191,12 @@ h2 {
   border: 1px solid var(--cream);
 }
 
-section {
-  padding: 75px 24px;
+.btn.outline:hover {
+  background: var(--cream);
+  color: var(--dark);
 }
+
+section { padding: 75px 24px; }
 
 .container {
   max-width: 1100px;
@@ -173,13 +208,9 @@ section {
   margin-bottom: 38px;
 }
 
-.heading p {
-  color: #c8bdac;
-}
+.heading p { color: #c8bdac; }
 
-.about {
-  background: var(--brown);
-}
+.about { background: var(--brown); }
 
 .split {
   display: grid;
@@ -211,9 +242,7 @@ section {
   color: var(--gold);
 }
 
-.price h2 {
-  margin: 0;
-}
+.price h2 { margin: 0; }
 
 .cards {
   display: grid;
@@ -229,19 +258,14 @@ section {
   border-radius: 4px;
 }
 
-.card h3,
-.policy h3 {
-  color: var(--gold);
-}
+.card h3, .policy h3 { color: var(--gold); }
 
 .card p {
   font-size: 14px;
   color: #d4cbbb;
 }
 
-.dark-section {
-  background: #303527;
-}
+.dark-section { background: #303527; }
 
 /* UECKER PHOTO AND TEXT */
 .uecker-grid {
@@ -266,9 +290,7 @@ section {
   max-width: 520px;
 }
 
-.uecker-info .eyebrow {
-  margin: 0 0 12px;
-}
+.uecker-info .eyebrow { margin: 0 0 12px; }
 
 .uecker-info h2 {
   margin: 0 0 20px;
@@ -306,9 +328,7 @@ section {
   border-left: 4px solid var(--olive);
 }
 
-.policy ul {
-  padding-left: 20px;
-}
+.policy ul { padding-left: 20px; }
 
 .policy li {
   margin: 8px 0;
@@ -325,9 +345,7 @@ section {
   margin: 25px auto;
 }
 
-.contact strong {
-  color: var(--gold);
-}
+.contact strong { color: var(--gold); }
 
 footer {
   text-align: center;
@@ -339,9 +357,7 @@ footer {
 
 /* MOBILE LAYOUT */
 @media(max-width:750px) {
-  .nav {
-    flex-direction: column;
-  }
+  .nav { flex-direction: column; }
 
   nav {
     justify-content: center;
@@ -369,18 +385,16 @@ footer {
     grid-template-columns: 1fr;
   }
 
-  section {
-    padding: 55px 20px;
-  }
+  section { padding: 55px 20px; }
 
- .uecker-photo {
-  width: 100%;
-  max-width: 450px;
-  height: 430px;
-  margin: auto;
-  object-fit: cover;
-  object-position: center 25%;
- }
+  .uecker-photo {
+    width: 100%;
+    max-width: 450px;
+    height: 430px;
+    margin: auto;
+    object-fit: cover;
+    object-position: center 25%;
+  }
 
   .uecker-info {
     width: 100%;
@@ -389,13 +403,11 @@ footer {
     text-align: left;
   }
 
-  .uecker-info h2 {
-    font-size: 32px;
-  }
+  .uecker-info h2 { font-size: 32px; }
 
-  .uecker-info p {
-    text-align: left;
-  }
+  .uecker-info p { text-align: left; }
+
+  .coming-soon { padding: 20px 15px; }
 }
 </style>
 </head>
@@ -422,8 +434,16 @@ COUNTRY PAWS BOARDING
 
 <main>
 
+<!-- COMING SOON BANNER -->
+<div class="coming-soon">
+<div class="coming-soon-label">COMING SOON</div>
+<h2>Country Paws Boarding Is Almost Ready!</h2>
+<p>We're getting ready to welcome your furry family members. Stay tuned for our opening announcement!</p>
+</div>
+
 <section class="hero" id="home">
 <div class="hero-inner">
+
 <div>
 <div class="eyebrow">Knox, Indiana · Country Paws Dog Boarding</div>
 
@@ -431,11 +451,17 @@ COUNTRY PAWS BOARDING
 
 <p>Personalized dog boarding with room to play, space to relax, and care you can feel good about.</p>
 
-<a class="btn" href="#contact">ASK ABOUT BOARDING</a>
+<a class="btn" href="booking.html">BOOK A STAY</a>
+<a class="btn outline" href="#contact">ASK ABOUT BOARDING</a>
 <a class="btn outline" href="#boarding">LEARN MORE</a>
+
+<p style="font-size:13px;color:#d6b66b;margin-top:12px;">
+Reservation requests are subject to review and approval.
+</p>
 </div>
 
 <img class="hero-logo" src="logo.png" alt="Country Paws Boarding">
+
 </div>
 </section>
 
@@ -457,7 +483,7 @@ COUNTRY PAWS BOARDING
 </div>
 
 <img src="ueck.jpg" alt="Uecker, our yellow Labrador Retriever">
-  
+
 </div>
 </section>
 
@@ -643,5 +669,6 @@ Personal care, one dog at a time.
 
 </body>
 </html>
+
 
 
